@@ -1,144 +1,161 @@
 /* basic initial styling */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;     
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* side title (project name only) */
 .side-title {
-  position: fixed;
-  left: 20px;
-  top: 50%;
+    position: fixed;
+    left: 20px;
+    top: 50%;
 
-
-  /* text runs vertically */
-  writing-mode: vertical-rl;   
-  transform: translateY(-50%) rotate(180deg);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #555;
-
+    /* text runs vertically */
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #555;
 }
 
 /* laptop */
 .laptop {
-
-  /* lets the screen sit on top of the image */
-  position: relative;          
-  width: 90%;
-  max-width: 1300px;
-  margin: 30px auto 0 auto;
+    /* lets the screen sit on top of the image */
+    position: relative;
+    width: 90%;
+    max-width: 1300px;
+    margin: 30px auto 0 auto;
 }
-
-
 
 .laptop-frame {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
-/* the screen sits over the blank screen of the laptop image.
-   initial positioning to see if it lines up correctly */
+/* the screen sits over the blank screen of the laptop image */
 .screen {
-  position: absolute;
-  top: 2.2%;
-  left: 19.2%;
-  width: 59.5%;
-  height: 48.9%;
-  background: white;
-  overflow: hidden;    
-
+    position: absolute;
+    top: 2.2%;
+    left: 19.2%;
+    width: 59.5%;
+    height: 48.9%;
+    background: white;
+    overflow: hidden;
 }
 
 /* tabs */
 .tabs {
-  display: flex;
-  gap: 2px;
-  padding: 6px 6px 0 6px;
-  background: #dee1e6;
-
+    display: flex;
+    gap: 2px;
+    padding: 6px 6px 0 6px;
+    background: #dee1e6;
 }
 
 .tab {
-
-  flex: 1;                           
-  padding: 6px 4px;
-  border: none;
-  border-radius: 8px 8px 0 0;
-  background: transparent;
-  font-size: 1.2vw;
-  color: #555;
-  cursor: pointer;
-
-  white-space: nowrap;
+    flex: 1;
+    padding: 6px 4px;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+    font-size: 1.2vw;
+    color: #555;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-
-
 .tab:hover {
-  background: #ecedf0;
+    background: #ecedf0;
 }
 
 /* the tab you're on looks connected to the page */
 .tab.active {
-  background: white;
-  color: #000;
-
+    background: white;
+    color: #000;
 }
 
-/*  pages inside the screen */
+/* used later to lock the Call tab until all 4 moments of the day are visited */
+.tab.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* pages inside the screen */
 .page {
-  display: none;             
-  padding: 12px;
+    display: none;
+    padding: 12px;
 }
 
 .page.active {
-  display: block;          
+    display: block;
 }
 
+/* call page: no padding so the video fills the whole screen width */
+#call {
+    padding: 0;
+    position: relative;
+    /* lets the button sit on top of the video */
+}
 
-
-/* call page */
 #call-video {
-  width: 100%;
-  display: block;
-  background: black;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* landscape video shape */
+    display: block;
+    background: black;
+    object-fit: cover;
+    /* video fills the box with no gaps */
 }
 
 
 /* hidden until the video finishes (JS will add the "show" class later) */
 #explore-btn {
-  display: none;
-  margin: 12px auto 0 auto;
-  padding: 10px 20px;
-  font-size: 15px;
-  border: none;
-  border-radius: 6px;
-  background: #1a73e8;
-  color: white;
-  cursor: pointer;
+    display: none;
+    position: absolute;
+    /* floats on top of the video */
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #1a73e8;
+    color: white;
+    cursor: pointer;
 }
 
 #explore-btn.show {
-  display: block;
+    display: block;
 }
 
 
 /* footer */
 footer {
-  margin-top: auto;          
-  padding: 20px;
-  text-align: center;
-  font-size: 13px;
-  color: #777;
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
 }
+
+
+
+
+
+
+
+
+
+
+
+
