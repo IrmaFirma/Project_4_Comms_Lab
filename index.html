@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Same Day, Two Screens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- on the left side project name only-->
+  <aside class="side-title">Same Day, Two Screens</aside>
+
+  <!-- laptop as the center piece -->
+  <main class="laptop">
+    <img class="laptop-frame" src="assets/laptop.png">
+
+    <!-- everything the viewer interacts with lives inside "screen" -->
+    <div class="screen">
+
+      <!-- tabs as the navigation -->
+      <nav class="tabs">
+        <button class="tab active">Call</button>
+        <button class="tab">Walk to Class</button>
+        <button class="tab">Food</button>
+        <button class="tab">Lecture</button>
+        <button class="tab">Notification</button>
+      </nav>
+
+      <!-- pages where only one is shown at a time -->
+      <section class="page active" id="call">
+        <video id="call-video" src="assets/call-opening.mp4"></video>
+        <button id="explore-btn">Explore their days</button>
+      </section>
+
+      <section class="page" id="walktoclass">
+        <p>Walk to Class Page</p>
+      </section>
+
+      <section class="page" id="food">
+        <p>Food page</p>
+      </section>
+
+      <section class="page" id="lecture">
+        <p>Lecture page</p>
+      </section>
+
+      <section class="page" id="notification">
+        <p>Notification page</p>
+      </section>
+
+    </div>
+  </main>
+
+
+
+  <!-- footer -->
+  <footer>Made by Sanjana, Jayden, Sarah and Irma</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
